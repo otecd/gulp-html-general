@@ -1,7 +1,7 @@
 {
   "name": "gulp-html-template",
   "authors": [
-    "### ### <###@###.###> (http://###.###)"
+    "<idimzz@gmail.com> (https://github.com/papadima)"
   ],
   "description": "Blank template for html project with sass, gulp, babel, IE8+ compatibility.",
   "main": [
@@ -12,10 +12,10 @@
     "html"
   ],
   "license": "MIT",
-  "homepage": "https://######.###",
+  "homepage": "https://github.com/papadima/gulp-html-general",
   "repository": {
     "type": "git",
-    "url": "git://github.com/###/###.git"
+    "url": "git@github.com:papadima/gulp-html-general.git"
   },
   "ignore": [
     "**/.*",
@@ -30,7 +30,6 @@
     "html5shiv": "^3.7.3",
     "respond": "^1.4.2",
     "pie-htc": "^1.0.0",
-    "ExplorerCanvas": "excanvas#*",
-    "core.js": "^2.4.1"
+    "ExplorerCanvas": "excanvas#*"
   }
 }
