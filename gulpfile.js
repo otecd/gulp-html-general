@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
     newer = require('gulp-newer'),
     del = require('del'),
     babel = require('gulp-babel'),
@@ -87,10 +88,15 @@ function buildHtml() {
 }
 
 function buildJs() {
+    var nm = 'ur-project'; // change it to your project's name
+    gulp.src(path.source.js)
+        .pipe(babel())
+        .pipe(concat(nm+'.js'))
+        .pipe(gulp.dest(path.build.js))
     return gulp.src(path.source.js)
         .pipe(babel())
-        // .pipe(uglify())
-        .pipe(rename({suffix: '.min', prefix : ''}))
+        .pipe(uglify())
+        .pipe(concat(nm+'.min.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 }
