@@ -78,7 +78,9 @@ var gulp = require('gulp'),
         tunnel: false,
         host: 'localhost',
         port: 1111,
-    };
+    },
+
+    nm = 'ur-project'; // change it to your project's name
 
 function buildHtml() {
     return gulp.src(path.source.html)
@@ -88,7 +90,6 @@ function buildHtml() {
 }
 
 function buildJs() {
-    var nm = 'ur-project'; // change it to your project's name
     gulp.src(path.source.js)
         .pipe(babel())
         .pipe(concat(nm+'.js'))
@@ -115,7 +116,9 @@ function buildCss() {
             browsers: ['ie 8-9', 'last 2 versions']
         }))
         .pipe(cleanCSS())
-        .pipe(rename({suffix: '.min', prefix : ''}))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 }
